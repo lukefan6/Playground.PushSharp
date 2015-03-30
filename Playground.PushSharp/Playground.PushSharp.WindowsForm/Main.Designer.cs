@@ -54,10 +54,10 @@
             // 
             // appleCertificateLocation
             // 
-            this.appleCertificateLocation.AutoSize = true;
+            this.appleCertificateLocation.AutoEllipsis = true;
             this.appleCertificateLocation.Location = new System.Drawing.Point(132, 40);
             this.appleCertificateLocation.Name = "appleCertificateLocation";
-            this.appleCertificateLocation.Size = new System.Drawing.Size(51, 16);
+            this.appleCertificateLocation.Size = new System.Drawing.Size(106, 16);
             this.appleCertificateLocation.TabIndex = 1;
             this.appleCertificateLocation.Text = "Not Set";
             // 
@@ -78,6 +78,7 @@
             this.ChooseAppleCertificate.TabIndex = 3;
             this.ChooseAppleCertificate.Text = "Choose...";
             this.ChooseAppleCertificate.UseVisualStyleBackColor = true;
+            this.ChooseAppleCertificate.Click += new System.EventHandler(this.ChooseAppleCertificate_Click);
             // 
             // appleTokenBox
             // 
