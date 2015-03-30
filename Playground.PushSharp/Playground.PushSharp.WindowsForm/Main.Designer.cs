@@ -139,6 +139,7 @@
             this.pushButton.TabIndex = 6;
             this.pushButton.Text = "Push";
             this.pushButton.UseVisualStyleBackColor = true;
+            this.pushButton.Click += new System.EventHandler(this.pushButton_Click);
             // 
             // Main
             // 
