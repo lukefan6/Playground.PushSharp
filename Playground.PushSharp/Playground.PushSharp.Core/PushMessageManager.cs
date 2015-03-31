@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 using PushSharp;
 using PushSharp.Apple;
 using PushSharp.Core;
@@ -51,22 +52,31 @@ namespace Playground.PushSharp.Core
             return this;
         }
 
-        public virtual void Send(string alertMessage, int numOfBadges = 0)
+        public virtual async void Send(string alertMessage, int numOfBadges = 0)
         {
             if (string.IsNullOrWhiteSpace(alertMessage)) { return; }
             if (numOfBadges < 0) { return; }
 
-            if (ShouldSendToApple)
+            await Task.Run(() =>
             {
-                byte[] appleCertification = File.ReadAllBytes(AppleCertificateLocation);
-                Push.RegisterAppleService(new ApplePushChannelSettings(appleCertification, "HaveagoodTIME!"));
-                Push.QueueNotification(
-                    new AppleNotification(AppleDeviceToken)
-                    .WithAlert(alertMessage)
-                    .WithBadge(numOfBadges));
-            }
+                if (ShouldSendToApple)
+                {
+                    byte[] appleCertification = File.ReadAllBytes(AppleCertificateLocation);
+                    Push.RegisterAppleService(new ApplePushChannelSettings(appleCertification, "HaveagoodTIME!"));
+                    try
+                    {
+                        Push.QueueNotification(new AppleNotification(AppleDeviceToken)
+                            .WithAlert(alertMessage)
+                            .WithBadge(numOfBadges));
+                    }
+                    catch (NotificationFailureException e)
+                    {
+                        Loggers.ForEach(x => x.Write(e.Message));
+                    }
+                }
 
-            Push.StopAllServices();
+                Push.StopAllServices();
+            });
         }
 
         //Currently it will raise only for android devices

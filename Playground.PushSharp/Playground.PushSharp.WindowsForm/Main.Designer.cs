@@ -39,6 +39,7 @@
             this.badgeLabel = new System.Windows.Forms.Label();
             this.labelAlertBody = new System.Windows.Forms.Label();
             this.pushButton = new System.Windows.Forms.Button();
+            this.logTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.badgeNumericUpDown)).BeginInit();
             this.SuspendLayout();
@@ -141,11 +142,22 @@
             this.pushButton.UseVisualStyleBackColor = true;
             this.pushButton.Click += new System.EventHandler(this.pushButton_Click);
             // 
+            // logTextBox
+            // 
+            this.logTextBox.Location = new System.Drawing.Point(27, 224);
+            this.logTextBox.Multiline = true;
+            this.logTextBox.Name = "logTextBox";
+            this.logTextBox.ReadOnly = true;
+            this.logTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.logTextBox.Size = new System.Drawing.Size(211, 113);
+            this.logTextBox.TabIndex = 7;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(331, 349);
+            this.Controls.Add(this.logTextBox);
             this.Controls.Add(this.pushButton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.appleTokenBox);
@@ -178,6 +190,7 @@
         private System.Windows.Forms.Label labelAlertBody;
         private System.Windows.Forms.NumericUpDown badgeNumericUpDown;
         private System.Windows.Forms.Button pushButton;
+        private System.Windows.Forms.TextBox logTextBox;
 
     }
 }
