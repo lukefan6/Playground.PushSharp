@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.PushSharp.WindowsForm", "Playground.PushSharp.WindowsForm\Playground.PushSharp.WindowsForm.csproj", "{971E9E04-886D-479A-9FFF-5754E8C41AB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.PushSharp.Core", "Playground.PushSharp.Core\Playground.PushSharp.Core.csproj", "{ADA612CA-DAB8-4900-AB31-357F8A3AFC68}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{971E9E04-886D-479A-9FFF-5754E8C41AB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{971E9E04-886D-479A-9FFF-5754E8C41AB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{971E9E04-886D-479A-9FFF-5754E8C41AB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{971E9E04-886D-479A-9FFF-5754E8C41AB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADA612CA-DAB8-4900-AB31-357F8A3AFC68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADA612CA-DAB8-4900-AB31-357F8A3AFC68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADA612CA-DAB8-4900-AB31-357F8A3AFC68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADA612CA-DAB8-4900-AB31-357F8A3AFC68}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
