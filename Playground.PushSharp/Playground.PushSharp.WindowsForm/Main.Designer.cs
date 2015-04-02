@@ -40,6 +40,8 @@
             this.labelAlertBody = new System.Windows.Forms.Label();
             this.pushButton = new System.Windows.Forms.Button();
             this.logTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxApplePassword = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.badgeNumericUpDown)).BeginInit();
             this.SuspendLayout();
@@ -94,7 +96,7 @@
             this.groupBox1.Controls.Add(this.alertBodyTextBox);
             this.groupBox1.Controls.Add(this.badgeLabel);
             this.groupBox1.Controls.Add(this.labelAlertBody);
-            this.groupBox1.Location = new System.Drawing.Point(27, 117);
+            this.groupBox1.Location = new System.Drawing.Point(27, 250);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(292, 100);
             this.groupBox1.TabIndex = 5;
@@ -134,7 +136,7 @@
             // 
             // pushButton
             // 
-            this.pushButton.Location = new System.Drawing.Point(244, 265);
+            this.pushButton.Location = new System.Drawing.Point(244, 457);
             this.pushButton.Name = "pushButton";
             this.pushButton.Size = new System.Drawing.Size(75, 23);
             this.pushButton.TabIndex = 6;
@@ -144,7 +146,7 @@
             // 
             // logTextBox
             // 
-            this.logTextBox.Location = new System.Drawing.Point(27, 224);
+            this.logTextBox.Location = new System.Drawing.Point(27, 367);
             this.logTextBox.Multiline = true;
             this.logTextBox.Name = "logTextBox";
             this.logTextBox.ReadOnly = true;
@@ -152,11 +154,30 @@
             this.logTextBox.Size = new System.Drawing.Size(211, 113);
             this.logTextBox.TabIndex = 7;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(27, 115);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 16);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Apple Password:";
+            // 
+            // textBoxApplePassword
+            // 
+            this.textBoxApplePassword.Location = new System.Drawing.Point(135, 108);
+            this.textBoxApplePassword.Name = "textBoxApplePassword";
+            this.textBoxApplePassword.Size = new System.Drawing.Size(184, 23);
+            this.textBoxApplePassword.TabIndex = 9;
+            this.textBoxApplePassword.UseSystemPasswordChar = true;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(331, 349);
+            this.ClientSize = new System.Drawing.Size(331, 492);
+            this.Controls.Add(this.textBoxApplePassword);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.logTextBox);
             this.Controls.Add(this.pushButton);
             this.Controls.Add(this.groupBox1);
@@ -191,6 +212,8 @@
         private System.Windows.Forms.NumericUpDown badgeNumericUpDown;
         private System.Windows.Forms.Button pushButton;
         private System.Windows.Forms.TextBox logTextBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxApplePassword;
 
     }
 }

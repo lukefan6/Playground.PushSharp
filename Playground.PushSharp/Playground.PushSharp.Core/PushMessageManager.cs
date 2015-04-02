@@ -18,11 +18,15 @@ namespace Playground.PushSharp.Core
 
         public string AppleDeviceToken { get; set; }
 
+        public string ApplePassword { get; set; }
+
         private bool ShouldSendToApple
         {
             get
             {
-                return !string.IsNullOrEmpty(AppleCertificateLocation) && !string.IsNullOrEmpty(AppleDeviceToken);
+                return !string.IsNullOrWhiteSpace(AppleCertificateLocation)
+                    && !string.IsNullOrWhiteSpace(AppleDeviceToken)
+                    && !string.IsNullOrWhiteSpace(ApplePassword);
             }
         }
 
@@ -62,7 +66,7 @@ namespace Playground.PushSharp.Core
                 if (ShouldSendToApple)
                 {
                     byte[] appleCertification = File.ReadAllBytes(AppleCertificateLocation);
-                    Push.RegisterAppleService(new ApplePushChannelSettings(appleCertification, "HaveagoodTIME!"));
+                    Push.RegisterAppleService(new ApplePushChannelSettings(appleCertification, ApplePassword));
                     try
                     {
                         Push.QueueNotification(new AppleNotification(AppleDeviceToken)
