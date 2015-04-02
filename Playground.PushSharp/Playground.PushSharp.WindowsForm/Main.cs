@@ -33,6 +33,8 @@ namespace Playground.PushSharp.WindowsForm
 
             Manager.AppleDeviceToken = this.appleTokenBox.Text;
             Manager.ApplePassword = this.textBoxApplePassword.Text;
+            Manager.GoogleApiKey = this.textBoxGoogleApiKey.Text;
+            Manager.GoogleRegId = this.textBoxGoogleRegId.Text;
             Manager.Send(this.alertBodyTextBox.Text, Convert.ToInt32(this.badgeNumericUpDown.Value));
         }
 

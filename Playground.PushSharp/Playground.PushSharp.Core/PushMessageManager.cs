@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using PushSharp;
+using PushSharp.Android;
 using PushSharp.Apple;
 using PushSharp.Core;
 
@@ -20,6 +22,10 @@ namespace Playground.PushSharp.Core
 
         public string ApplePassword { get; set; }
 
+        public string GoogleApiKey { get; set; }
+
+        public string GoogleRegId { get; set; }
+
         private bool ShouldSendToApple
         {
             get
@@ -27,6 +33,15 @@ namespace Playground.PushSharp.Core
                 return !string.IsNullOrWhiteSpace(AppleCertificateLocation)
                     && !string.IsNullOrWhiteSpace(AppleDeviceToken)
                     && !string.IsNullOrWhiteSpace(ApplePassword);
+            }
+        }
+
+        private bool ShouldSendToGoogle
+        {
+            get
+            {
+                return !string.IsNullOrWhiteSpace(GoogleApiKey)
+                    && !string.IsNullOrWhiteSpace(GoogleRegId);
             }
         }
 
@@ -77,6 +92,18 @@ namespace Playground.PushSharp.Core
                     {
                         Loggers.ForEach(x => x.Write(e.Message));
                     }
+                }
+
+                if (ShouldSendToGoogle)
+                {
+                    Push.RegisterGcmService(new GcmPushChannelSettings(GoogleApiKey));
+                    Push.QueueNotification(new GcmNotification()
+                        .ForDeviceRegistrationId(GoogleRegId)
+                        .WithJson(JsonConvert.SerializeObject(new
+                        {
+                            alert = alertMessage,
+                            badge = numOfBadges
+                        })));
                 }
 
                 Push.StopAllServices();
