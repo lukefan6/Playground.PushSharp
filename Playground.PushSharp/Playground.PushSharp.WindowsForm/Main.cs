@@ -28,11 +28,11 @@ namespace Playground.PushSharp.WindowsForm
 
         private void pushButton_Click(object sender, System.EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(this.appleTokenBox.Text)) { MessageBox.Show("Token not provided"); return; }
             if (string.IsNullOrWhiteSpace(this.alertBodyTextBox.Text)) { MessageBox.Show("Alert Body not provided"); return; }
             if (this.badgeNumericUpDown.Value < 0) { MessageBox.Show("Badge value must > 0"); return; }
 
             Manager.AppleDeviceToken = this.appleTokenBox.Text;
+            Manager.ApplePassword = this.textBoxApplePassword.Text;
             Manager.Send(this.alertBodyTextBox.Text, Convert.ToInt32(this.badgeNumericUpDown.Value));
         }
 
